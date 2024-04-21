@@ -2,28 +2,30 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #fff;
 }
 
 body::before {
     content: "";
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://i.ytimg.com/vi/0cY5A67PqLM/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDl_WzLzcBkWgyOdSm4XU5Ozxa7SQ'); /* ścieżka do twojego obrazu */
+    background-color: rgba(0, 0, 0, 0.5); /* tu ustawisz kolor tła i jego przezroczystość */
+    background-image: url('https://i.ytimg.com/vi/0cY5A67PqLM/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDl_WzLzcBkWgyOdSm4XU5Ozxa7SQ');
     background-size: cover;
     background-repeat: no-repeat;
-    filter: blur(10px); /* Ustawienie rozmazania tła */
-    z-index: -1; /* Ustawienie tła za innymi elementami */
+    filter: blur(10px);
+    z-index: -1;
+    opacity: 0.8; /* zmniejszona przezroczystość tła */
 }
 
 .container {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* lekko przezroczyste białe tło */
+    background-color: rgba(3, 3, 3, 0.8); /* lekko przezroczyste białe tło */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative; /* Ustawienie kontenera w stosunku do tła */
@@ -33,11 +35,26 @@ body::before {
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #fff;
 }
 
 iframe {
     width: 100%;
     border-radius: 5px;
     filter: none; /* Usunięcie filtru blur dla elementu video */
+}
+.button {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
 }
