@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OglądajFilm.pl</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script>
+        function checkFileExistence(url) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('HEAD', url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === xhr.DONE) {
+                    if (xhr.status === 404) {
+                        window.location.href = '404.html'; // Przekierowanie na stronę 404
+                    }
+                }
+            };
+            xhr.send();
+        }
+        
+        window.onload = function() {
+            var urlToCheck = window.location.pathname; // Pobranie ścieżki URL
+            checkFileExistence(urlToCheck);
+        };
+    </script>
+    <header>
+        <h1>OglądajPatryszonaYT</h1>
+        <p>Oglądaj filmy PatryszonaYT - gdziekolwiek jesteś, gdy chcesz.</p>
+        <a href="#movies" class="btn">Zacznij oglądać teraz</a>
+    </header>
+    <section id="movies">
+        <h2>Filmy</h2>
+        <div class="movies-grid">
+            <div class="movie">
+                <img src="zdjęcie/Czysta 1.png" alt="Film 1">
+                <h3>Pierwsze starcie ...</h3>
+                <p>Odcinek z Youtube :)</p>
+                <a href="Filmy/EvilNUN/ODC1/EvilNunod1.html">Obejrzyj teraz</a>
+            </div>
+            <div class="movie">
+                <img src="Youtube.com" alt="Film 2">
+                <h3>Film 2</h3>
+                <p>Opis filmu 2</p>
+                <a href="404.html">Obejrzyj teraz</a>
+            </div>
+            <!-- Dodaj więcej filmów w podobny sposób -->
+        </div>
+    </section>
+    <section id="series">
+        <h2>Seriale</h2>
+        <div class="series-grid">
+            <!-- Tutaj dodaj kafelki z miniaturami plakatów serialowych -->
+            <div class="series-tile">
+                <img src="https://via.placeholder.com/200x300" alt="Serial 1">
+                <h3>EvilNun Z PatryszonemYT</h3>
+                <a href="Seriale\EvilNunZPYT\Serial1.html">Obejrzyj</a>
+            </div>
+            <div class="series-tile">
+                <img src="https://via.placeholder.com/200x300" alt="Serial 2">
+                <h3>Serial 2</h3>
+                <a href="404.html">Obejrzyj</a>
+            </div>
+            <!-- Dodaj więcej kafelków serialowych według potrzeb -->
+    </section>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">Strona Główna</a></li>
+                <li><a href="#movies">Filmy</a></li>
+                <li><a href="#series">Seriale</a></li>
+                <li><a href="404.html">O nas</a></li>
+                <li><a href="404.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
