@@ -36,7 +36,7 @@ h1 {
     color: #333;
 }
 
-video {
+frame {
     width: 100%;
     border-radius: 5px;
     filter: none; /* Usunięcie filtru blur dla elementu video */
